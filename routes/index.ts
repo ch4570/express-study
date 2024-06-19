@@ -1,4 +1,4 @@
-import router from "../common/router";
+import router from "../common/router.js";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -46,4 +46,4 @@ router.get('/api/v1/multipleQuery', (req, res) => {
   })
 })
 
-module.exports = router;
+export default router;

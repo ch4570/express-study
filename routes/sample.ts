@@ -1,8 +1,8 @@
-import router from "../common/router";
+import router from "../common/router.js";
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-module.exports = router;
+export default router;
