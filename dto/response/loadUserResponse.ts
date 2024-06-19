@@ -1,4 +1,4 @@
-export class LoadAllUserResponse {
+export class LoadUserResponse {
     name: String;
     email: string;
     password: string;

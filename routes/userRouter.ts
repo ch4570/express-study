@@ -1,7 +1,7 @@
 import router from "../common/router.js";
 import { validateOrReject } from "class-validator";
 import { register } from "../service/registerUserService";
-import { loadAllMembers } from "../service/loadAllUserService";
+import {loadAllUsers, loadUserByName} from "../service/loadUserService";
 
 // DTO Import
 import { RegisterUserResponse } from "../dto/response/registerUserResponse";
@@ -37,12 +37,27 @@ router.post('/api/v1/users', async (req, res) => {
 
 /* GET Load All Saved Users */
 router.get('/api/v1/users', async (req, res) => {
-    const userList = await loadAllMembers()
+    const userList = await loadAllUsers()
     console.log(`userList = ${userList}`)
 
     res.json({
-        message : 'User loaded successfully.',
+        message : 'User found successfully.',
         data : userList
+    })
+})
+
+/* GET Load One User By Name */
+router.get('/api/v1/users/:name', async (req, res) => {
+    const user = await loadUserByName(req.params.name)
+    console.log(`user = ${user}`)
+
+    if (user === null) {
+        res.status(204)
+    }
+
+    res.json({
+        message : 'User found successfully.',
+        data : user
     })
 })
 
