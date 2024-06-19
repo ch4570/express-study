@@ -1,4 +1,4 @@
-import router from "../common/router.js";
+import router from "../common/router/router";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

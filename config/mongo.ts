@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {CustomError} from "../common/customError";
+import {CustomError} from "../common/error/customError";
 
 export const connectDB = async () => {
     try {

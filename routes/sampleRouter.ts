@@ -1,4 +1,4 @@
-import router from "../common/router.js";
+import router from "../common/router/router";
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

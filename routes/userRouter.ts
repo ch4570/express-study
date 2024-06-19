@@ -1,4 +1,4 @@
-import router from "../common/router.js";
+import router from "../common/router/router";
 import { validateOrReject } from "class-validator";
 import { register } from "../service/registerUserService";
 import {loadAllUsers, loadUserByName} from "../service/loadUserService";
