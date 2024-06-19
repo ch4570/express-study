@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+import router from "../common/router";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

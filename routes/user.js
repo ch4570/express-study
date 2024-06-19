@@ -1,8 +1,8 @@
+import router from "../common/router";
+
+// DTO Import
 import {RegisterUserResponse} from "../dto/response/registerUserResponse";
 import {RegisterUserCommand} from '../dto/request/registerUserCommand';
-
-const express = require('express');
-const router = express.Router();
 
 
 /* POST API With Request Body(JSON) */
