@@ -1,7 +1,7 @@
 import { connectDB } from "../config/mongo";
 import { closeConnection } from "../config/mongo";
 import { User } from "../models/user";
-import {LoadUserResponse} from "../dto/response/loadUserResponse";
+import { LoadUserResponse } from "../dto/response/loadUserResponse";
 
 export const loadAllUsers = async () => {
     await connectDB();

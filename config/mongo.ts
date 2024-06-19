@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {CustomError} from "../common/customError";
 
 export const connectDB = async () => {
     try {
@@ -13,7 +14,6 @@ export const connectDB = async () => {
 
     } catch (error) {
         console.log(error);
-        process.exit(1);
     }
 };
 
@@ -23,6 +23,5 @@ export const closeConnection = async () => {
         console.log(`[TIME] : [${new Date()}] Disconnect from MongoDB`)
     } catch (error) {
         console.error(`[TIME] [${new Date()}], errorMessage = ${error}`)
-        throw error
     }
 }
