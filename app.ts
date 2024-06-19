@@ -4,14 +4,11 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import createError from 'http-errors';
-import connectDB from './config/mongo'
 
-import userRouter from './routes/user';
-import sampleRouter from './routes/sample'
-import indexRouter from './routes/index'
+import userRouter from './routes/userRouter';
+import sampleRouter from './routes/sampleRouter'
+import indexRouter from './routes/indexRouter'
 
-// MongoDB 연결
-connectDB();
 const app = express();
 
 // view engine setup
