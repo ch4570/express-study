@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import {CustomError} from "../common/error/customError";
+import * as process from "node:process";
 
 export const connectDB = async () => {
     try {
         const connection = await mongoose.connect('mongodb://localhost:27017/mydatabase', {
             user: 'root',
-            pass: 'root',
+            pass: 'rot',
             authSource: 'admin'
         });
 
@@ -14,6 +14,7 @@ export const connectDB = async () => {
 
     } catch (error) {
         console.log(error);
+        process.exit(1);
     }
 };
 

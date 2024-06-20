@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import express, { Request, Response, NextFunction } from 'express';
+import 'express-async-errors'
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
@@ -25,21 +26,14 @@ app.use(userRouter)
 app.use(sampleRouter)
 app.use(indexRouter)
 
-
-// catch 404 and forward to error handler
-app.use(function (req: Request, res: Response, next: NextFunction) {
-  next(createError(404));
-});
-
 // error handler
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+  res
+      .status(error.status || 500)
+      .send({
+        name: error.name || 'Internal Server Error',
+        message: error.message || '서버 내부에서 오류가 발생했습니다.'
+      });
 });
 
 export default app;
